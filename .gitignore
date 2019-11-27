@@ -101,4 +101,7 @@ public/
 *.sass.map
 *.scss.map
 
+# MHM13
+css/style.prefix.css
+css/style.comp.css
 # End of https://www.gitignore.io/api/node,sass
