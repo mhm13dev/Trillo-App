@@ -36,7 +36,7 @@
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-    padding: 0.7rem 2rem;
+    padding: 1rem 2rem;
     transition: all 0.2s;
 
     &:focus {
@@ -50,13 +50,30 @@
 
   &__button {
     position: absolute;
-    top: 0.6rem;
-    right: 3.5rem;
+    top: 0rem;
+    right: 3rem;
+    padding: 1rem;
+    line-height: 0;
     background: transparent;
     border: none;
     transition: all 0.2s;
+    @include media($largest) {
+      right: 2.5rem;
+    }
+    @include media($medium) {
+      right: 2.25rem;
+    }
+    @include media($medium-1) {
+      right: 2rem;
+    }
     @include media($small) {
-      right: 4.5rem;
+      right: 4rem;
+    }
+    @include media($smallest) {
+      right: 3.5rem;
+    }
+    @include media($smallest-1) {
+      right: 3rem;
     }
     &:focus {
       outline: none;
@@ -266,19 +283,21 @@
 // OVERVIEW
 .overview {
   display: flex;
-  border-bottom: var(--line);
   align-items: center;
+  background-color: var(--color-grey-dark-1);
   @include media($smallest-1) {
     flex-wrap: wrap;
   }
   &__heading {
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 300;
+    color: #fff;
     letter-spacing: 1px;
     padding: 1rem 1.5rem;
     cursor: default;
     @include media($small) {
       font-size: 1.8rem;
+      font-weight: 400;
       padding: 1rem 0.5rem;
     }
     @include media($smallest-1) {
@@ -303,7 +322,7 @@
   &__icon-location {
     width: 1.75rem;
     height: 1.75rem;
-    fill: var(--color-primary);
+    fill: var(--color-primary-light);
     @include media($small) {
       width: 1.5rem;
       height: 1.5rem;
@@ -332,7 +351,7 @@
     }
   }
   &__rating {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-light);
     align-self: stretch;
     color: #fff;
     padding: 1rem 1.5rem;
@@ -378,10 +397,10 @@
 .btn-inline {
   background: transparent;
   border: none;
-  color: var(--color-primary);
+  color: var(--color-primary-light);
   font-family: inherit;
   font-size: inherit;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary-light);
   padding-bottom: 0.35rem;
   cursor: pointer;
 
@@ -469,9 +488,9 @@
   align-items: center;
   font-size: 1.3rem;
 
-   @include media($smallest-1) {
-      flex-direction: column;
-    }
+  @include media($smallest-1) {
+    flex-direction: column;
+  }
 
   &__count {
     margin-right: auto;
@@ -483,7 +502,7 @@
   &__friends {
     display: flex;
     @include media($smallest-1) {
-      margin-bottom: 1rem; 
+      margin-bottom: 1rem;
     }
   }
   &__photo {
